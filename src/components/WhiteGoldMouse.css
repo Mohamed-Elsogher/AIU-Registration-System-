@@ -1,0 +1,66 @@
+:root {
+    background-color: #1a1a1a;
+    
+    /* White gold color variables */
+    --white-gold-light: #f5f3f0;
+    --white-gold-dark: #e8d9b5;
+    --shadow-color: rgba(232, 217, 181, 0.8);
+    --animation-duration: 3s;
+  }
+  
+  .white-gold-cursor {
+    position: fixed;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: linear-gradient(145deg, 
+      var(--white-gold-light), 
+      var(--white-gold-dark));
+    box-shadow: 
+      0 0 15px rgba(232, 217, 181, 0.8),
+      0 0 30px rgba(232, 217, 181, 0.6);
+    pointer-events: none;
+    transform: translate(-50%, -50%);
+    z-index: 9999;
+    mix-blend-mode: screen;
+    animation: pulse var(--animation-duration) infinite alternate;
+  }
+  
+  .white-gold-trail {
+    position: fixed;
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background: radial-gradient(
+      circle,
+      rgba(232, 217, 181, 0.2) 0%,
+      rgba(232, 217, 181, 0) 70%
+    );
+    pointer-events: none;
+    transform: translate(-50%, -50%);
+    z-index: 9998;
+    transition: all 0.3s ease-out;
+  }
+  
+  @keyframes pulse {
+    0% {
+      transform: translate(-50%, -50%) scale(1);
+      box-shadow: 
+        0 0 15px rgba(232, 217, 181, 0.8),
+        0 0 30px rgba(232, 217, 181, 0.6);
+    }
+    100% {
+      transform: translate(-50%, -50%) scale(1.1);
+      box-shadow: 
+        0 0 25px rgba(232, 217, 181, 1),
+        0 0 45px rgba(232, 217, 181, 0.8);
+    }
+  }
+  
+  /* Hide on touch devices */
+  @media (pointer: coarse) {
+    .white-gold-cursor,
+    .white-gold-trail {
+      display: none;
+    }
+  }
