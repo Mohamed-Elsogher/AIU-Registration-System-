@@ -1,30 +1,27 @@
 @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Cairo:wght@400;600&family=Playfair+Display:wght@500;700&display=swap');
 
-/* General Navbar Styles */
 .navbar {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    background-color: rgba(25, 25, 25, 0.95); /* Semi-transparent dark */
+    background-color: rgba(25, 25, 25, 0.95);
     padding: 15px 5%;
     width: 100%;
     border-bottom: 2px solid #d4af37;
-    position: fixed; /* Makes navbar stick to top */
+    position: fixed;
     top: 0;
     left: 0;
     z-index: 1000;
-    backdrop-filter: blur(8px); /* Frosted glass effect */
+    backdrop-filter: blur(8px);
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
     transition: all 0.4s ease-in-out;
 }
 
-/* Scrolled state for navbar */
 .navbar.scrolled {
     padding: 10px 5%;
     background-color: rgba(10, 10, 10, 0.98);
 }
 
-/* Navbar Brand (AIU.) */
 .navbar-brand {
     display: flex;
     align-items: center;
@@ -34,9 +31,10 @@
 .navbar-brand a {
     text-decoration: none;
 }
+
 .navbar-brand h1 {
     font-size: 2.2rem;
-    font-family: 'Playfair Display', serif; /* More elegant alternative */
+    font-family: 'Playfair Display', serif;
     color: #d4af37;
     margin: 0;
     font-weight: 700;
@@ -50,7 +48,6 @@
     transform: scale(1.02);
 }
 
-/* Navigation List */
 .navbar-nav {
     display: flex;
     list-style: none;
@@ -61,13 +58,11 @@
     margin: 0 40px;
 }
 
-/* Individual Nav Items */
 .nav-item {
     position: relative;
     white-space: nowrap;
 }
 
-/* Navigation Links */
 .nav-link {
     font-size: 1.1rem;
     font-family: 'Cinzel', serif;
@@ -98,7 +93,6 @@
     width: 100%;
 }
 
-/* Active link styling */
 .nav-link.active {
     color: #d4af37;
     font-weight: 600;
@@ -108,7 +102,6 @@
     width: 100%;
 }
 
-/* Dropdown menu styles */
 .nav-item.dropdown {
     position: relative;
 }
@@ -147,7 +140,6 @@
     padding-left: 25px;
 }
 
-/* Call-to-action button */
 .nav-cta {
     background: linear-gradient(135deg, #d4af37 0%, #f1c860 100%);
     color: #191919 !important;
@@ -164,7 +156,6 @@
     color: #000 !important;
 }
 
-/* Responsive Design */
 @media (max-width: 1200px) {
     .navbar-nav {
         gap: 25px;
@@ -213,7 +204,6 @@
     }
 }
 
-/* Mobile menu toggle */
 .menu-toggle {
     display: none;
     cursor: pointer;

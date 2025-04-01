@@ -6,13 +6,11 @@ function Navbar() {
     const [scrolled, setScrolled] = useState(false);
     const [activeLink, setActiveLink] = useState("");
 
-    // Handle scroll effect
     useEffect(() => {
         const handleScroll = () => {
             setScrolled(window.scrollY > 10);
         };
 
-        // Set initial active link based on current path
         const path = window.location.pathname;
         setActiveLink(path === "/" ? "home" : 
                       path === "/courses" ? "courses" :
@@ -24,12 +22,10 @@ function Navbar() {
         return () => window.removeEventListener("scroll", handleScroll);
     }, []);
 
-    // Smooth scroll and set active link
     const handleNavClick = (section) => {
         setActiveLink(section);
         setIsOpen(false);
         
-        // Scroll to top if it's the same page
         if (window.location.pathname === `/${section === 'home' ? '' : section}`) {
             window.scrollTo({ top: 0, behavior: "smooth" });
         }
@@ -43,7 +39,6 @@ function Navbar() {
                 </a>
             </div>
 
-            {/* Animated Hamburger Menu */}
             <div 
                 className={`menu-toggle ${isOpen ? "active" : ""}`}
                 onClick={() => setIsOpen(!isOpen)}

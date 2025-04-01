@@ -9,7 +9,6 @@ const WhiteGoldMouse = () => {
     const handleMouseMove = (e) => {
       setPosition({ x: e.clientX, y: e.clientY });
       
-      // Add slight delay for the trail effect
       setTimeout(() => {
         setTrailPosition({ x: e.clientX, y: e.clientY });
       }, 100);
