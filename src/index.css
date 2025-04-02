@@ -1,53 +1,180 @@
 :root {
-    background-color: #1a1a1a; /* Your existing dark background */
-    
-    /* White gold color variables */
-    --white-gold-light: #f5f3f0;
-    --white-gold-dark: #e8d9b5;
-    --shadow-color: rgba(232, 217, 181, 0.8);
-    --animation-duration: 3s;
+  --dark-background: #1a1a1a;
+  --golden-light: #f5d26e;
+  --golden-dark: #c8a050;
+  --shadow-color: rgba(245, 210, 110, 0.8);
+  --animation-duration: 5s;
+  --spacing: 100px;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background: var(--dark-background);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  overflow-x: hidden;
+}
+
+.navbar {
+  width: 100%;
+  padding: 20px;
+  background: rgba(0, 0, 0, 0.8);
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  border-bottom: 2px solid var(--golden-light);
+}
+
+.background-animation {
+  position: fixed;
+  width: 200%;
+  height: 200%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: radial-gradient(circle, var(--golden-light) 10%, var(--dark-background) 90%);
+  animation: moveBackground var(--animation-duration) infinite alternate linear;
+  z-index: -1;
+}
+
+@keyframes moveBackground {
+  0% {
+      transform: translate(-50%, -50%) scale(1.2);
+      background: radial-gradient(circle, var(--golden-light) 10%, var(--dark-background) 90%);
+  }
+  50% {
+      transform: translate(-50%, -50%) scale(1.4);
+      background: radial-gradient(circle, var(--golden-dark) 30%, var(--dark-background) 100%);
+  }
+  100% {
+      transform: translate(-50%, -50%) scale(1.2);
+      background: radial-gradient(circle, var(--golden-light) 20%, var(--dark-background) 80%);
+  }
+}
+
+.container {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 30px;
+  width: 100%;
+  max-width: 1200px;
+  padding: 10px;
+  margin: calc(var(--spacing) + 1000px) auto var(--spacing);
+  box-sizing: border-box;
+}
+
+.university-card {
+  flex: 1;
+  padding: 25px;
+  text-align: center;
+  border-radius: 12px;
+  color: var(--golden-light);
+}
+
+.university-card h1 {
+  color: var(--golden-light);
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+}
+
+.university-card p {
+  color: var(--golden-light);
+  font-size: 1.2rem;
+  line-height: 1.6;
+}
+
+.auth-form {
+  flex: 1;
+  padding: 30px;
+  background: rgba(0, 0, 0, 0.7);
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(245, 210, 110, 0.3);
+  max-width: 400px;
+}
+
+.auth-form input, 
+.auth-form button {
+  width: 100%;
+  padding: 12px;
+  margin: 10px 0;
+  border-radius: 8px;
+  border: none;
+  text-align: center;
+  transition: all 0.3s;
+  box-sizing: border-box;
+}
+
+.auth-form input {
+  background: rgba(255, 255, 255, 0.1);
+  color: var(--golden-light);
+  border: 1px solid var(--golden-dark);
+}
+
+.auth-form input::placeholder {
+  color: var(--golden-light);
+  opacity: 0.7;
+}
+
+.auth-form button {
+  background: var(--golden-dark);
+  color: #000;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.auth-form button:hover {
+  background: var(--golden-light);
+  box-shadow: 0 0 10px var(--shadow-color);
+}
+
+/* Sign up link styling */
+.signup-link {
+  color: var(--golden-light);
+  text-decoration: none;
+  margin-top: 15px;
+  display: block;
+  text-align: center;
+}
+
+.signup-link:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 1024px) {
+  .container {
+      flex-direction: column;
+      gap: 30px;
+      padding: 15px;
+      margin-top: calc(var(--spacing) + 40px);
+  }
+
+  .university-card, 
+  .auth-form {
+      width: 100%;
+      max-width: 100%;
+  }
+
+  .education-section {
+      padding: 30px 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+      margin-top: calc(var(--spacing) + 20px);
   }
   
-  .white-gold-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    width: 100%;
+  .education-grid {
+      grid-template-columns: 1fr;
+      gap: 15px;
   }
-  
-  .white-gold {
-    width: 300px;
-    height: 300px;
-    border-radius: 50%;
-    background: linear-gradient(145deg, 
-      var(--white-gold-light), 
-      var(--white-gold-dark));
-    box-shadow: 
-      0 0 20px rgba(232, 217, 181, 0.8),
-      0 0 40px rgba(232, 217, 181, 0.6),
-      0 0 60px rgba(232, 217, 181, 0.4);
-    position: relative;
-    animation: shimmer var(--animation-duration) infinite alternate;
+
+  .university-card h1 {
+      font-size: 2rem;
   }
-  
-  @keyframes shimmer {
-    0% {
-      background: linear-gradient(145deg, 
-        var(--white-gold-light), 
-        var(--white-gold-dark));
-      box-shadow: 
-        0 0 20px rgba(232, 217, 181, 0.8),
-        0 0 40px rgba(232, 217, 181, 0.6),
-        0 0 60px rgba(232, 217, 181, 0.4);
-    }
-    100% {
-      background: linear-gradient(145deg, 
-        var(--white-gold-dark), 
-        var(--white-gold-light));
-      box-shadow: 
-        0 0 30px rgba(232, 217, 181, 1),
-        0 0 50px rgba(232, 217, 181, 0.8),
-        0 0 70px rgba(232, 217, 181, 0.6);
-    }
-  }
+}
