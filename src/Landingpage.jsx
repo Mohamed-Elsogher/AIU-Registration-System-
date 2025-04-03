@@ -7,7 +7,6 @@ import EducationInEgypt from './components/Past';
 function Landingpage() {
     return (
         <>
-            <Navbar />
             <div className="container">
                 <div className="university-card">
                     <UniversityCard 

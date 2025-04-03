@@ -1,9 +1,11 @@
 import { useState, useEffect } from "react";
+import { Link, useLocation } from "react-router-dom";
 import "./Navbar.css";
 
 function Navbar() {
     const [isOpen, setIsOpen] = useState(false);
     const [scrolled, setScrolled] = useState(false);
+    const location = useLocation();
     const [activeLink, setActiveLink] = useState("");
 
     useEffect(() => {
@@ -11,32 +13,18 @@ function Navbar() {
             setScrolled(window.scrollY > 10);
         };
 
-        const path = window.location.pathname;
-        setActiveLink(path === "/" ? "home" : 
-                      path === "/courses" ? "courses" :
-                      path === "/faculty" ? "faculty" :
-                      path === "/research" ? "research" :
-                      path === "/contact" ? "contact" : "");
+        setActiveLink(location.pathname === "/" ? "home" : location.pathname.slice(1));
 
         window.addEventListener("scroll", handleScroll);
         return () => window.removeEventListener("scroll", handleScroll);
-    }, []);
-
-    const handleNavClick = (section) => {
-        setActiveLink(section);
-        setIsOpen(false);
-        
-        if (window.location.pathname === `/${section === 'home' ? '' : section}`) {
-            window.scrollTo({ top: 0, behavior: "smooth" });
-        }
-    };
+    }, [location]);
 
     return (
         <nav className={`navbar ${scrolled ? "scrolled" : ""}`}>
             <div className="navbar-brand">
-                <a href="/" onClick={() => handleNavClick("home")}>
+                <Link to="/" onClick={() => setActiveLink("home")}>
                     <h1>AIU.</h1>
-                </a>
+                </Link>
             </div>
 
             <div 
@@ -51,69 +39,29 @@ function Navbar() {
 
             <ul className={`navbar-nav ${isOpen ? "active" : ""}`}>
                 <li className="nav-item">
-                    <a 
-                        className={`nav-link ${activeLink === "home" ? "active" : ""}`} 
-                        href="/"
-                        onClick={(e) => {
-                            e.preventDefault();
-                            handleNavClick("home");
-                            window.history.pushState({}, "", "/");
-                        }}
-                    >
+                    <Link className={`nav-link ${activeLink === "home" ? "active" : ""}`} to="/" onClick={() => setIsOpen(false)}>
                         Home
-                    </a>
+                    </Link>
                 </li>
                 <li className="nav-item">
-                    <a 
-                        className={`nav-link ${activeLink === "courses" ? "active" : ""}`} 
-                        href="/courses"
-                        onClick={(e) => {
-                            e.preventDefault();
-                            handleNavClick("courses");
-                            window.history.pushState({}, "", "/courses");
-                        }}
-                    >
+                    <Link className={`nav-link ${activeLink === "courses" ? "active" : ""}`} to="/courses" onClick={() => setIsOpen(false)}>
                         Courses
-                    </a>
+                    </Link>
                 </li>
                 <li className="nav-item">
-                    <a 
-                        className={`nav-link ${activeLink === "faculty" ? "active" : ""}`} 
-                        href="/faculty"
-                        onClick={(e) => {
-                            e.preventDefault();
-                            handleNavClick("faculty");
-                            window.history.pushState({}, "", "/faculty");
-                        }}
-                    >
+                    <Link className={`nav-link ${activeLink === "faculty" ? "active" : ""}`} to="/faculty" onClick={() => setIsOpen(false)}>
                         Faculty
-                    </a>
+                    </Link>
                 </li>
                 <li className="nav-item">
-                    <a 
-                        className={`nav-link ${activeLink === "research" ? "active" : ""}`} 
-                        href="/research"
-                        onClick={(e) => {
-                            e.preventDefault();
-                            handleNavClick("research");
-                            window.history.pushState({}, "", "/research");
-                        }}
-                    >
+                    <Link className={`nav-link ${activeLink === "research" ? "active" : ""}`} to="/research" onClick={() => setIsOpen(false)}>
                         Research
-                    </a>
+                    </Link>
                 </li>
                 <li className="nav-item">
-                    <a 
-                        className={`nav-link ${activeLink === "contact" ? "active" : ""}`} 
-                        href="/contact"
-                        onClick={(e) => {
-                            e.preventDefault();
-                            handleNavClick("contact");
-                            window.history.pushState({}, "", "/contact");
-                        }}
-                    >
+                    <Link className={`nav-link ${activeLink === "contact" ? "active" : ""}`} to="/contact" onClick={() => setIsOpen(false)}>
                         Contact
-                    </a>
+                    </Link>
                 </li>
             </ul>
         </nav>

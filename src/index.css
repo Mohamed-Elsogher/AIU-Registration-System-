@@ -64,7 +64,7 @@ body {
   width: 100%;
   max-width: 1200px;
   padding: 10px;
-  margin: calc(var(--spacing) + 1000px) auto var(--spacing);
+  margin: calc(var(--spacing) + 90%) auto var(--spacing);
   box-sizing: border-box;
 }
 

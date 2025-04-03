@@ -7,7 +7,7 @@ const EducationInEgypt = () => {
   const educationData = [
     {
       era: "Education in the Pharaoh Era",
-      image: Ph, // Corrected image reference
+      image: Ph, 
       description:
         "Education in ancient Egypt was reserved for the elite, focusing on hieroglyphics, mathematics, and religious teachings. Temples served as learning centers, and scribes played a crucial role in preserving knowledge.",
       features: [
