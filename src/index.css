@@ -67,7 +67,9 @@ body {
   margin: calc(var(--spacing) + 90%) auto var(--spacing);
   box-sizing: border-box;
 }
-
+.container img{
+  width: 40%;
+}
 .university-card {
   flex: 1;
   padding: 25px;
