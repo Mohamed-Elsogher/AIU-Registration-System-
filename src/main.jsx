@@ -19,6 +19,7 @@ import Login from "./Login";
 import Register from "./Register";
 import ResearchInfo from "./ResearchInfo";
 import UserSettings from "./components/UserSettings";
+import PaymentPage from "./components/PaymentPage";
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
@@ -29,7 +30,6 @@ createRoot(document.getElementById("root")).render(
         <Route path="/courses" element={<Courses />} />
         <Route path="/faculty" element={<FacultyInfo />} />
         <Route path="/settings" element={<UserSettings/>}/>
-
         <Route path="/research" element={<ResearchInfo />} />
         <Route path="/contact" element={<ContactUs/>}/>
         <Route path="/login" element={<Login />} />
@@ -37,7 +37,7 @@ createRoot(document.getElementById("root")).render(
         <Route path="/dashboard" element={<Dashboard />} />
         <Route path="/registration" element={<Registration />} />
         <Route path="/academic" element={<div className="page-container"><div className="page-header"><h1>Academic Records</h1></div><div className="page-content"><p>Academic Records content will be added here</p></div><div className="back-link"><a href="/dashboard">← Back to Dashboard</a></div></div>} />
-        <Route path="/payments" element={<div className="page-container"><div className="page-header"><h1>University Payments</h1></div><div className="page-content"><p>Payments content will be added here</p></div><div className="back-link"><a href="/dashboard">← Back to Dashboard</a></div></div>} />
+        <Route path="/payments" element={<PaymentPage/>} />
         
         {/* Manage Classes Routes */}
         <Route path="/manage-classes" element={<ManageClasses />} />

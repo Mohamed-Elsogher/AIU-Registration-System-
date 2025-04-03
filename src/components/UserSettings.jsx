@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import './UserSettings.css'; // Custom CSS for styling
+import './UserSettings.css';
+import { Link } from 'react-router-dom';
 
 const UserSettings = () => {
   const [currentPassword, setCurrentPassword] = useState('');
@@ -9,13 +10,11 @@ const UserSettings = () => {
 
   const handleChangePassword = (e) => {
     e.preventDefault();
-    // Here you would typically validate the passwords and send a request to change the password
     console.log('Password change requested:', { currentPassword, newPassword, confirmPassword });
   };
 
   const handleContactIT = (e) => {
     e.preventDefault();
-    // Here you would typically send the IT support message to a backend service
     console.log('IT Support message:', itSupportMessage);
   };
 
@@ -66,6 +65,9 @@ const UserSettings = () => {
             <button type="submit">Send to IT Support</button>
           </form>
         </div>
+      </div>
+      <div className="back-link">
+        <Link to="/dashboard">← Back to Dashboard</Link>
       </div>
     </div>
   );

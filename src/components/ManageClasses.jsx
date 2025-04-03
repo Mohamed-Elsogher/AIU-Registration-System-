@@ -5,7 +5,7 @@ import '../LandingUserInfo.css';
 import './PageStyles.css';
 
 export default function ManageClasses() {
-  const [user, setUser] = useState({name: "", id: ""});
+  const [user, setUser] = useState({ name: "", id: "" });
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -22,10 +22,10 @@ export default function ManageClasses() {
   }
 
   return (
-    <div className="page-container">
+    <div className="manage-classes-container">
       <div className="user-info-container">
         <div className="user-info-content">
-          <p className="user-name">{user.name}</p>
+          <p className="user-name">Welcome, {user.name}</p>
           <p className="user-id">ID: {user.id}</p>
         </div>
       </div>
@@ -36,50 +36,58 @@ export default function ManageClasses() {
       </div>
       
       <div className="sub-options-grid">
-        {/* View Classes */}
         <Link to="/view-classes" className="sub-option-link">
           <div className="sub-option-card">
+            <div className="sub-option-icon">
+              <BookOpen size={40} />
+            </div>
             <div className="sub-option-title">
-              <BookOpen size={30} />
               <h3>View my Classes</h3>
             </div>
+            <p className="sub-option-description">Check your current class schedule and details.</p>
           </div>
         </Link>
 
-        {/* Enrollment Appointment */}
         <Link to="/enrollment-appointment" className="sub-option-link">
           <div className="sub-option-card">
+            <div className="sub-option-icon">
+              <Calendar size={40} />
+            </div>
             <div className="sub-option-title">
-              <Calendar size={30} />
               <h3>Enrollment Appointment</h3>
             </div>
+            <p className="sub-option-description">Schedule your time for class enrollment.</p>
           </div>
         </Link>
 
-        {/* Enrollment by Requirement */}
         <Link to="/enrollment-requirement" className="sub-option-link">
           <div className="sub-option-card">
+            <div className="sub-option-icon">
+              <ClipboardList size={40} />
+            </div>
             <div className="sub-option-title">
-              <ClipboardList size={30} />
               <h3>Enrollment by Requirement</h3>
             </div>
+            <p className="sub-option-description">Enroll in classes based on your academic needs.</p>
           </div>
         </Link>
 
-        {/* Drop Classes */}
         <Link to="/drop-classes" className="sub-option-link">
           <div className="sub-option-card">
+            <div className="sub-option-icon">
+              <Trash2 size={40} />
+            </div>
             <div className="sub-option-title">
-              <Trash2 size={30} />
               <h3>Drop Classes</h3>
             </div>
+            <p className="sub-option-description">Remove classes from your schedule if needed.</p>
           </div>
         </Link>
       </div>
 
       <div className="back-link">
-        <a href="/dashboard">← Back to Dashboard</a>
+        <Link to="/dashboard">← Back to Dashboard</Link>
       </div>
     </div>
   );
-} 
+}
