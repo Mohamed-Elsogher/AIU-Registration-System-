@@ -18,6 +18,7 @@ import Landingpage from "./Landingpage";
 import Login from "./Login";
 import Register from "./Register";
 import ResearchInfo from "./ResearchInfo";
+import UserSettings from "./components/UserSettings";
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
@@ -27,6 +28,8 @@ createRoot(document.getElementById("root")).render(
         <Route path="/" element={<Landingpage />} />
         <Route path="/courses" element={<Courses />} />
         <Route path="/faculty" element={<FacultyInfo />} />
+        <Route path="/settings" element={<UserSettings/>}/>
+
         <Route path="/research" element={<ResearchInfo />} />
         <Route path="/contact" element={<ContactUs/>}/>
         <Route path="/login" element={<Login />} />
@@ -35,7 +38,6 @@ createRoot(document.getElementById("root")).render(
         <Route path="/registration" element={<Registration />} />
         <Route path="/academic" element={<div className="page-container"><div className="page-header"><h1>Academic Records</h1></div><div className="page-content"><p>Academic Records content will be added here</p></div><div className="back-link"><a href="/dashboard">← Back to Dashboard</a></div></div>} />
         <Route path="/payments" element={<div className="page-container"><div className="page-header"><h1>University Payments</h1></div><div className="page-content"><p>Payments content will be added here</p></div><div className="back-link"><a href="/dashboard">← Back to Dashboard</a></div></div>} />
-        <Route path="/settings" element={<div className="page-container"><div className="page-header"><h1>User Settings</h1></div><div className="page-content"><p>Settings content will be added here</p></div><div className="back-link"><a href="/dashboard">← Back to Dashboard</a></div></div>} />
         
         {/* Manage Classes Routes */}
         <Route path="/manage-classes" element={<ManageClasses />} />
@@ -59,7 +61,6 @@ createRoot(document.getElementById("root")).render(
         
         <Route path="/year-three/first-semester" element={<div className="page-container"><div className="page-header"><h1>Third Year - First Semester</h1></div><div className="page-content"><p>First semester courses will be added here</p></div><div className="back-link"><a href="/year-three">← Back to Third Year</a></div></div>} />
         <Route path="/year-three/second-semester" element={<div className="page-container"><div className="page-header"><h1>Third Year - Second Semester</h1></div><div className="page-content"><p>Second semester courses will be added here</p></div><div className="back-link"><a href="/year-three">← Back to Third Year</a></div></div>} />
-        
         <Route path="/year-four/first-semester" element={<div className="page-container"><div className="page-header"><h1>Fourth Year - First Semester</h1></div><div className="page-content"><p>First semester courses will be added here</p></div><div className="back-link"><a href="/year-four">← Back to Fourth Year</a></div></div>} />
         <Route path="/year-four/second-semester" element={<div className="page-container"><div className="page-header"><h1>Fourth Year - Second Semester</h1></div><div className="page-content"><p>Second semester courses will be added here</p></div><div className="back-link"><a href="/year-four">← Back to Fourth Year</a></div></div>} />
       </Routes>
