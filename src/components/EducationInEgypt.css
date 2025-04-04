@@ -1,0 +1,133 @@
+.education-section {
+    padding: 4rem 2rem;
+    min-height: 100vh;
+  }
+  
+  .education-container {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  .education-title {
+    font-size: 3rem;
+    font-weight: bold;
+    text-align: center;
+    color: var(--golden-light);
+    margin-bottom: 3rem;
+    position: relative;
+  }
+  
+  .education-title::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 3px;
+    background: var(--golden-dark);
+    border-radius: 2px;
+  }
+  
+  .education-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+  }
+  
+  .era-card {
+    background: rgba(0, 0, 0, 0.7);
+    border-radius: 15px;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid var(--golden-dark);
+  }
+  
+  .era-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(245, 210, 110, 0.3);
+  }
+  
+  .image-container {
+    position: relative;
+    height: 250px;
+  }
+  
+  .era-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  
+  .image-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+  }
+  
+  .era-content {
+    padding: 1.5rem;
+  }
+  
+  .era-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--golden-light);
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid var(--golden-dark);
+  }
+  
+  .era-description {
+    color: #fff;
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+  }
+  
+  .features-container {
+    margin-top: 1.5rem;
+  }
+  
+  .features-title {
+    font-size: 1.2rem;
+    color: var(--golden-light);
+    margin-bottom: 1rem;
+  }
+  
+  .features-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .feature-item {
+    color: #fff;
+    padding: 0.5rem 0 0.5rem 1.5rem;
+    position: relative;
+  }
+  
+  .feature-item::before {
+    content: '•';
+    color: var(--golden-light);
+    position: absolute;
+    left: 0.5rem;
+    font-size: 1.2em;
+  }
+  
+  @media (max-width: 768px) {
+    .education-section {
+      padding: 2rem 1rem;
+    }
+  
+    .education-title {
+      font-size: 2.5rem;
+    }
+  
+    .education-grid {
+      grid-template-columns: 1fr;
+    }
+  
+    .era-card {
+      margin-bottom: 1.5rem;
+    }
+  }

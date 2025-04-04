@@ -1,0 +1,199 @@
+:root {
+  --dark-background: #1a1a1a;
+  --golden-light: #f5d26e;
+  --golden-dark: #c8a050;
+  --shadow-color: rgba(245, 210, 110, 0.8);
+  --animation-duration: 5s;
+  --spacing: 100px;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background: var(--dark-background);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  overflow-x: hidden;
+}
+
+.navbar {
+  width: 100%;
+  padding: 20px;
+  background: rgba(0, 0, 0, 0.8);
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  border-bottom: 2px solid var(--golden-light);
+}
+
+.background-animation {
+  position: fixed;
+  width: 200%;
+  height: 200%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: radial-gradient(circle, var(--golden-light) 10%, var(--dark-background) 90%);
+  animation: moveBackground var(--animation-duration) infinite alternate linear;
+  z-index: -1;
+}
+
+@keyframes moveBackground {
+  0% {
+      transform: translate(-50%, -50%) scale(1.2);
+      background: radial-gradient(circle, var(--golden-light) 10%, var(--dark-background) 90%);
+  }
+  50% {
+      transform: translate(-50%, -50%) scale(1.4);
+      background: radial-gradient(circle, var(--golden-dark) 30%, var(--dark-background) 100%);
+  }
+  100% {
+      transform: translate(-50%, -50%) scale(1.2);
+      background: radial-gradient(circle, var(--golden-light) 20%, var(--dark-background) 80%);
+  }
+}
+
+.container {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 30px;
+  width: 100%;
+  max-width: 1200px;
+  padding: 10px;
+  margin: calc(var(--spacing) + 90%) auto var(--spacing);
+  box-sizing: border-box;
+}
+
+.container img{
+  width: 40%;
+}
+
+.university-card {
+  flex: 1;
+  padding: 25px;
+  text-align: center;
+  border-radius: 12px;
+  color: var(--golden-light);
+}
+
+.university-card h1 {
+  color: var(--golden-light);
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+}
+
+.university-card p {
+  color: var(--golden-light);
+  font-size: 1.2rem;
+  line-height: 1.6;
+}
+
+.auth-form {
+  flex: 1;
+  padding: 30px;
+  background: rgba(0, 0, 0, 0.7);
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(245, 210, 110, 0.3);
+  max-width: 400px;
+}
+
+.auth-form input, 
+.auth-form button {
+  width: 100%;
+  padding: 12px;
+  margin: 10px 0;
+  border-radius: 8px;
+  border: none;
+  text-align: center;
+  transition: all 0.3s;
+  box-sizing: border-box;
+}
+
+.auth-form input {
+  background: rgba(255, 255, 255, 0.1);
+  color: var(--golden-light);
+  border: 1px solid var(--golden-dark);
+}
+
+.auth-form input::placeholder {
+  color: var(--golden-light);
+  opacity: 0.7;
+}
+
+.auth-form button {
+  background: var(--golden-dark);
+  color: #000;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.auth-form button:hover {
+  background: var(--golden-light);
+  box-shadow: 0 0 10px var(--shadow-color);
+}
+
+/* sign up لقيته موجود ف ضفت ان حد ي*/
+.signup-link {
+  color: var(--golden-light);
+  text-decoration: none;
+  margin-top: 15px;
+  display: block;
+  text-align: center;
+}
+
+.signup-link:hover {
+  text-decoration: underline;
+}
+
+/* Add styles for other components */
+.contact-us,
+.courses-section,
+.faculty-section,
+.research-section {
+  background: var(--card-background);
+  color: var(--text-color);
+  border: 1px solid var(--border-color);
+}
+
+/* Add transition for all color changes */
+* {
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+
+@media (max-width: 1024px) {
+  .container {
+      flex-direction: column;
+      gap: 30px;
+      padding: 15px;
+      margin-top: calc(var(--spacing) + 40px);
+  }
+
+  .university-card, 
+  .auth-form {
+      width: 100%;
+      max-width: 100%;
+  }
+
+  .education-section {
+      padding: 30px 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+      margin-top: calc(var(--spacing) + 20px);
+  }
+  
+  .education-grid {
+      grid-template-columns: 1fr;
+      gap: 15px;
+  }
+
+  .university-card h1 {
+      font-size: 2rem;
+  }
+}

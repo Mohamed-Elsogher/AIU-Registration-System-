@@ -1,0 +1,56 @@
+.academic-records-container {
+  margin-top: 20%;
+  padding: 40px 20px;
+  color: #d4af37;
+  font-family: 'Arial', sans-serif;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.records-table-container {
+  padding: 30px;
+  margin: 20px;
+  width: 100%;
+  overflow-x: auto;
+  border: 3px solid #d4af37;
+  box-shadow: 0 10px 30px rgba(212, 175, 55, 0.3);
+}
+
+.records-table {
+  width: 100%;
+  border-collapse: collapse;
+  color: #fff;
+}
+
+.records-table th,
+.records-table td {
+  padding: 18px;
+  text-align: left;
+  border-bottom: 1px solid rgba(212, 175, 55, 0.3);
+  white-space: nowrap;
+}
+
+.records-table th {
+  background-color: rgba(212, 175, 55, 0.2);
+  color: #d4af37;
+  font-weight: bold;
+  font-size: 1.1em;
+}
+
+.records-table tr:hover {
+  background-color: rgba(212, 175, 55, 0.1);
+}
+
+.page-header {
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.page-header h1 {
+  margin: 0;
+  font-size: 2.5em;
+  font-weight: bold;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+} 

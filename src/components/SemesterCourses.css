@@ -1,0 +1,86 @@
+.semester-page-container {
+  padding: 40px 20px;
+  color: #fff;
+  font-family: 'Arial', sans-serif;
+  min-height: 100vh;
+  background: #1c1c1c;
+  text-align: center;
+}
+
+.semester-page-header h1 {
+  font-size: 2.5em;
+  margin-bottom: 30px;
+  color: #d4af37;
+}
+
+.courses-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.course-item {
+  margin-bottom: 20px;
+}
+
+.course-card {
+  background: linear-gradient(145deg, #2b2b2b, #1a1a1a);
+  padding: 20px;
+  border-radius: 10px;
+  color: #fff;
+  text-align: left;
+  box-shadow: 5px 5px 15px #111, -5px -5px 15px #333;
+  transition: all 0.3s ease;
+}
+
+.course-card:hover {
+  transform: translateY(-5px);
+}
+
+.enroll-button {
+  margin-top: 10px;
+  padding: 8px 16px;
+  background-color: #d4af37;
+  color: #1c1c1c;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.enroll-button:hover {
+  background-color: #b89a36;
+}
+
+.semester-back-link {
+  margin-top: 40px;
+}
+
+.semester-back-link a {
+  color: #d4af37;
+  font-size: 1.2em;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.semester-back-link a:hover {
+  text-decoration: underline;
+  color: #b89a36;
+}
+
+.styled-back-button {
+  padding: 10px 20px;
+  background-color: #d4af37;
+  color: #1c1c1c;
+  border: none;
+  border-radius: 5px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.styled-back-button:hover {
+  background-color: #b89a36;
+  transform: scale(1.05);
+}
