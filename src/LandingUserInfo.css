@@ -1,0 +1,91 @@
+.user-info-container {
+  position: fixed;
+  top: 110px; 
+  left: 0;
+  z-index: 99;
+  padding: 15px 25px;
+  background: rgba(0, 0, 0, 0.8);
+  border-right: 2px solid var(--golden-light);
+  border-bottom: 2px solid var(--golden-light);
+  border-radius: 0 0 12px 0;
+  backdrop-filter: blur(5px);
+  box-shadow: 3px 3px 15px rgba(0, 0, 0, 0.3);
+}
+
+.user-info-content {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.user-name {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: var(--golden-light);
+  margin: 0;
+}
+
+.user-id {
+  font-size: 1rem;
+  color: var(--golden-light);
+  opacity: 0.9;
+  margin: 0;
+}
+
+.welcome-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 25px;
+  text-align: center;
+  color: var(--golden-light);
+}
+
+.welcome-box h2 {
+  margin-bottom: 15px;
+}
+
+.welcome-box ul {
+  text-align: left;
+  margin: 15px 0;
+  padding-left: 20px;
+}
+
+.welcome-box li {
+  margin-bottom: 10px;
+  opacity: 0.9;
+}
+
+.dashboard-button {
+  display: inline-block;
+  padding: 12px 25px;
+  background: var(--golden-dark);
+  color: #000;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 8px;
+  margin-top: 10px;
+  transition: all 0.3s ease;
+}
+
+.dashboard-button:hover {
+  background: var(--golden-light);
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(245, 210, 110, 0.4);
+}
+
+@media (max-width: 768px) {
+  .user-info-container {
+    top: 70px;
+    padding: 8px 15px;
+  }
+  
+  .user-name {
+    font-size: 1rem;
+  }
+  
+  .user-id {
+    font-size: 0.8rem;
+  }
+} 
