@@ -136,7 +136,6 @@ body {
   box-shadow: 0 0 10px var(--shadow-color);
 }
 
-/* sign up لقيته موجود ف ضفت ان حد ي*/
 .signup-link {
   color: var(--golden-light);
   text-decoration: none;
@@ -149,7 +148,6 @@ body {
   text-decoration: underline;
 }
 
-/* Add styles for other components */
 .contact-us,
 .courses-section,
 .faculty-section,
@@ -159,7 +157,6 @@ body {
   border: 1px solid var(--border-color);
 }
 
-/* Add transition for all color changes */
 * {
   transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
 }
