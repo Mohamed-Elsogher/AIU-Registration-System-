@@ -16,9 +16,7 @@ function Landingpage() {
                     />
                 </div>
 
-                <div className="auth-form">
-                    <AuthForm />
-                </div>
+            
             </div>
 
             <EducationInEgypt />
