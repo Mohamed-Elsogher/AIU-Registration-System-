@@ -44,20 +44,20 @@ createRoot(document.getElementById("root")).render(
         <Route path="/academic" element={<AcademicRecords />} />
         <Route path="/payments" element={<PaymentPage/>} />
         
-        {/* Manage Classes Routes */}
+        {/* Manage Classes*/}
         <Route path="/manage-classes" element={<ManageClasses />} />
         <Route path="/view-classes" element={<ViewMyClasses />} />
         <Route path="/enrollment-appointment" element={<EnrollmentAppointment />} />
         <Route path="/enrollment-requirement" element={<EnrollmentRequirement />} />
         <Route path="/drop-classes" element={<DropClasses />} />
         
-        {/* Year Routes */}
+        {/* Year */}
         <Route path="/year-one" element={<YearOne />} />
         <Route path="/year-two" element={<YearTwo />} />
         <Route path="/year-three" element={<YearThree />} />
         <Route path="/year-four" element={<YearFour />} />
         
-        {/* Semester Routes */}
+        {/* Semester */}
         <Route path="/year-one/first-semester" element={<SemesterCourses year="First Year" semester="First Semester" />} />
         <Route path="/year-one/second-semester" element={<SemesterCourses year="First Year" semester="Second Semester" />} />
         <Route path="/year-two/first-semester" element={<SemesterCourses year="Second Year" semester="First Semester" />} />
